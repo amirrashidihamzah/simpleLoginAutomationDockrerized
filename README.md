@@ -18,7 +18,10 @@ Dockerize selenium login page automation
    Install the Lombok plugin and restart IntelliJ IDEA if prompted.
    ![image](https://github.com/user-attachments/assets/b14172f0-967a-4dc2-a7bf-7cbfcfb79c47)
    just focus on the lombok part, annotation processing should be prompted when u restart the IDE
-8. If all step complete without any error we can just run our test now, just go to this class and click run test
+8. Install docker desktop as we want to run the test in a docker container
+9. After finish installing the docker open the path of ur project that contains the dockerfile and docker-compose, example here
+. ![image](https://github.com/user-attachments/assets/d353cedd-5908-4e32-a7e2-91d50c73f228)   
+10. If all step complete without any error we can just run our test now, just go to this class and click run test
    ![image](https://github.com/user-attachments/assets/151f5e6c-cd6c-49b9-9d40-bef00f7c83b3)
 
 

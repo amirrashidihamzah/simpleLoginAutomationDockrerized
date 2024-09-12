@@ -10,7 +10,14 @@ Dockerize selenium login page automation
 4. clone this project onto ur local computer in any directory u want using git clone https(name of the repo)
 5. Open the project that ur clone into the IDE, example below
    ![image](https://github.com/user-attachments/assets/e0013de2-b027-4433-8a5d-4649491f7de0)
-6. Install lombok into the IDE - this for our boileplate code
+6. Install Lombok Plugin (if necessary):
+   Go to File > Settings (or IntelliJ IDEA > Preferences on macOS).
+   Navigate to Plugins.
+   Search for "Lombok" in the Marketplace tab.
+   Install the Lombok plugin and restart IntelliJ IDEA if prompted.
+   ![Uploading image.png…]()
+   just focus on the lombok part, annotation processing should be prompted when u restart the IDE
 
  
+
    

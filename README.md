@@ -10,6 +10,7 @@ Dockerize selenium login page automation
 4. clone this project onto ur local computer in any directory u want using git clone https(name of the repo)
 5. Open the project that ur clone into the IDE, example below
    ![image](https://github.com/user-attachments/assets/e0013de2-b027-4433-8a5d-4649491f7de0)
+6. Install lombok into the IDE - this for our boileplate code
 
  
    

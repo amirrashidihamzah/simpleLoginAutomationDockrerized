@@ -20,9 +20,18 @@ Dockerize selenium login page automation
    just focus on the lombok part, annotation processing should be prompted when u restart the IDE
 8. Install docker desktop as we want to run the test in a docker container
 9. After finish installing the docker open the path of ur project that contains the dockerfile and docker-compose, example here
-. ![image](https://github.com/user-attachments/assets/d353cedd-5908-4e32-a7e2-91d50c73f228)   
-10. If all step complete without any error we can just run our test now, just go to this class and click run test
+. ![image](https://github.com/user-attachments/assets/d353cedd-5908-4e32-a7e2-91d50c73f228)
+10. run docker-compose build command in ur cmd (this one to build the image in our docker-compose)
+11. after finish build, run command docker-compose up, u can check all the service run here in docker desktop as shown below
+   ![image](https://github.com/user-attachments/assets/6bc3027e-f2a6-4d9d-924d-031ec1240038)
+   this means our service already up
+12. Check our node already start in this localhost:4444/grid/console, it should be create all our nodes
+13. If all step complete without any error we can just run our test now, just go to this class and click run test
    ![image](https://github.com/user-attachments/assets/151f5e6c-cd6c-49b9-9d40-bef00f7c83b3)
+14. This test will record the video that we mount to our local directory, in order to access video simply stop the service in docker desktop
+15. U can access the video of our recording in here
+ ![image](https://github.com/user-attachments/assets/456dcae9-e3ba-441e-a0b3-45a06aa77dd3)
+
 
 
  

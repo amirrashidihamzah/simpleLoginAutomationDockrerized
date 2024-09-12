@@ -36,6 +36,13 @@ jobs:
     - name: Mock Build with Maven
       run: echo "mvn clean package"
 
+    # Mock: Test the application
+    - name: Mock Run Unit Tests
+      run: echo "mvn test"
+
+    - name: Mock Run Integration Tests
+      run: echo "Running integration tests..."
+
     # Mock: Build Docker image
     - name: Mock Build Docker image
       run: echo "docker build -t myapp:${{ github.sha }} ."

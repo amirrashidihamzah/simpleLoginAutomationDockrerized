@@ -10,7 +10,8 @@ Dockerize selenium login page automation
 4. clone this project onto ur local computer in any directory u want using git clone https(name of the repo)
 5. Open the project that ur clone into the IDE, example below
    ![image](https://github.com/user-attachments/assets/e0013de2-b027-4433-8a5d-4649491f7de0)
-6. Install Lombok Plugin (if necessary):
+6. When u open the project, maven will download all the necessary file, just wait until it finished   
+7. Install Lombok Plugin (if necessary):
    Go to File > Settings (or IntelliJ IDEA > Preferences on macOS).
    Navigate to Plugins.
    Search for "Lombok" in the Marketplace tab.

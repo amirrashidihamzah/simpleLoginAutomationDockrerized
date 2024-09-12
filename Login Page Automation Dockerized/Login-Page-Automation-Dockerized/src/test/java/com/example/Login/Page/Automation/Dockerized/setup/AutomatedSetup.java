@@ -1,6 +1,5 @@
 package com.example.Login.Page.Automation.Dockerized.setup;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.Data;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

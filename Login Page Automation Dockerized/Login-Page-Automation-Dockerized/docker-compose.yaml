@@ -5,12 +5,15 @@ services:
     image: selenium/hub:4.24.0
     container_name: selenium-hub
     ports:
+      - "4442:4442"
+      - "4443:4443"
       - "4444:4444"
     networks:
       - selenium-network
 
   chrome:
     image: selenium/node-chrome:4.24.0
+    shm_size: "2gb"
     container_name: selenium-chrome
     depends_on:
       - selenium-hub
@@ -18,15 +21,26 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - SE_NODE_GRID_URL=http://selenium-hub:4444/grid/register
-      - SE_NODE_VIDEO=true
+    ports:
+      - "6901:5900"
     networks:
       - selenium-network
+
+  chrome_video:
+    image: selenium/video:ffmpeg-4.3.1-20230801
     volumes:
-      - ./videos:/opt/selenium/videos  # Mount a local directory to store videos
+      - ./videos:/videos
+    depends_on:
+      - chrome
+    environment:
+      - DISPLAY_CONTAINER_NAME=chrome
+      - FILE_NAME=chrome_video.mp4
+    networks:
+      - selenium-network
 
   firefox:
     image: selenium/node-firefox:4.24.0
+    shm_size: 2gb
     container_name: selenium-firefox
     depends_on:
       - selenium-hub
@@ -34,12 +48,22 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - SE_NODE_GRID_URL=http://selenium-hub:4444/grid/register
-      - SE_NODE_VIDEO=true
+    ports:
+      - "6902:5900"
     networks:
       - selenium-network
+
+  firefox_video:
+    image: selenium/video:ffmpeg-4.3.1-20230801
     volumes:
-      - ./videos:/opt/selenium/videos  # Mount a local directory to store videos
+      - ./videos:/videos
+    depends_on:
+      - firefox
+    environment:
+      - DISPLAY_CONTAINER_NAME=firefox
+      - FILE_NAME=firefox_video.mp4
+    networks:
+      - selenium-network
 
   edge:
     image: selenium/node-edge:4.24.0
@@ -50,12 +74,22 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - SE_NODE_GRID_URL=http://selenium-hub:4444/grid/register
-      - SE_NODE_VIDEO=true
+    ports:
+      - "6903:5900"
     networks:
       - selenium-network
+
+  edge_video:
+    image: selenium/video:ffmpeg-4.3.1-20230801
     volumes:
-      - ./videos:/opt/selenium/videos  # Mount a local directory to store videos
+      - ./videos:/videos
+    depends_on:
+      - edge
+    environment:
+      - DISPLAY_CONTAINER_NAME=edge
+      - FILE_NAME=edge_video.mp4
+    networks:
+      - selenium-network
 
 networks:
   selenium-network:

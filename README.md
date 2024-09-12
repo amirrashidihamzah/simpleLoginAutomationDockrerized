@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/aa1ef9af-f2dd-40e0-b3a8-76e247ec86a0)# simpleLoginAutomationDockrerized
 Dockerize selenium login page automation
 
 #Prerequisite 

@@ -15,7 +15,7 @@ Dockerize selenium login page automation
    Navigate to Plugins.
    Search for "Lombok" in the Marketplace tab.
    Install the Lombok plugin and restart IntelliJ IDEA if prompted.
-   ![Uploading image.png…]()
+   ![image](https://github.com/user-attachments/assets/b14172f0-967a-4dc2-a7bf-7cbfcfb79c47)
    just focus on the lombok part, annotation processing should be prompted when u restart the IDE
 
  

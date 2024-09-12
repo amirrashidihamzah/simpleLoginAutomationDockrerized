@@ -30,7 +30,7 @@ Dockerize selenium login page automation
    ![image](https://github.com/user-attachments/assets/151f5e6c-cd6c-49b9-9d40-bef00f7c83b3)
 14. This test will record the video that we mount to our local directory, in order to access video simply stop the service in docker desktop
 15. U can access the video of our recording in here
- ![image](https://github.com/user-attachments/assets/456dcae9-e3ba-441e-a0b3-45a06aa77dd3)
+    ![image](https://github.com/user-attachments/assets/456dcae9-e3ba-441e-a0b3-45a06aa77dd3)
 
 
 

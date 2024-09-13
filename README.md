@@ -21,7 +21,7 @@ Dockerize selenium login page automation
 8. Install docker desktop as we want to run the test in a docker container
 9. After finish installing the docker open the path of ur project that contains the dockerfile and docker-compose, example here
 . ![image](https://github.com/user-attachments/assets/d353cedd-5908-4e32-a7e2-91d50c73f228)
-10. run docker-compose build command in ur cmd (this one to build the image in our docker-compose)
+10. run docker-compose build command in ur cmd (this one to build the image in our docker-compose), for this docker engine must be run(In our case docker desktop)
 11. after finish build, run command docker-compose up, u can check all the service run here in docker desktop as shown below
    ![image](https://github.com/user-attachments/assets/6bc3027e-f2a6-4d9d-924d-031ec1240038)
    this means our service already up

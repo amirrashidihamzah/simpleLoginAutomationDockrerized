@@ -1,0 +1,60 @@
+name: Staging CI/CD Pipeline
+
+on:
+  # Trigger workflow on push to staging branch
+  push:
+    branches:
+      - staging
+  pull_request:
+    branches:
+      - staging
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Set up JDK 17
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'adopt'
+
+    # Cache Maven dependencies
+    - name: Cache Maven packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-maven
+
+    # Mock: Build the application using Maven
+    - name: Mock Build with Maven
+      run: echo "mvn clean package"
+
+    # Mock: Test the application
+    - name: Mock Run Unit Tests
+      run: echo "mvn test"
+
+    - name: Mock Run Integration Tests
+      run: echo "Running integration tests..."
+
+    # Mock: Build Docker image
+    - name: Mock Build Docker image
+      run: echo "docker build -t myapp:${{ github.sha }} ."
+
+    # Mock: Push Docker image to Docker Hub
+    - name: Mock Push to Docker Hub
+      run: |
+        echo "docker login -u mydockerhubuser"
+        echo "docker tag myapp:${{ github.sha }} mydockerhubuser/myapp:${{ github.sha }}"
+        echo "docker push mydockerhubuser/myapp:${{ github.sha }}"
+
+    # Mock: Simulate deployment step
+    - name: Mock Deploy
+      run: echo "Simulating deployment..."

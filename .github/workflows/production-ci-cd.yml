@@ -1,12 +1,17 @@
-name: Mock CI/CD Pipeline
+name: Production CI/CD Pipeline
 
 on:
+  # Trigger workflow on push to main branch
   push:
     branches:
       - main
   pull_request:
     branches:
       - main
+
+  # Trigger workflow on a schedule (every day at 6:00 UTC)
+  schedule:
+    - cron: '0 6 * * *'
 
 jobs:
   build:
